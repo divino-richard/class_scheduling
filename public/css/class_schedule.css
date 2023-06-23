@@ -1,0 +1,332 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+}
+
+::-webkit-scrollbar {
+	width: 6px;
+    height: 6px;
+	background-color: #F5F5F5;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+	background-color: #7BA7FF;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-track {
+    border-radius: 5px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+body{
+    background-color: #FFF;
+}
+
+#show_header_btn{
+    display: none;
+    padding: .5rem;
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+    color: #FFF;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    cursor: pointer;
+}
+#show_header_btn i{
+    font-size: 1.5rem;
+}
+#hide_header_btn{
+    display: none;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    border: none;
+    color: #FFF;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: #090081;
+}
+#hide_header_btn:hover{
+    background-color: #FFF;
+    color: #1c0ed7;
+}
+#show_header_btn:hover{
+    background-color: #3123ff;
+}
+.small_header{
+    display: none;
+    background-color: #1c0ed7;
+    padding: .5rem 1rem;
+    display: flex;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.header{
+    height: 4rem;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    background-color: #1c0ed7;
+    border-bottom: 1px dashed #b2b2b2;
+}
+.header h2{
+    color: #7268ff;
+    font-size: 1.2rem;
+}
+.header section{
+    display: flex;
+    align-items: center;
+}
+.header section select{
+    font-size: .9rem;
+    background-color: #3123ff;
+    color: #FFF;
+    padding: .5rem;
+    margin: 0 .5rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.header section select:hover{
+    background-color: #1304ee;
+}
+.header section select option {
+    background-color: #FFF;
+    font-size: .9rem;
+    color: #000;
+}
+.back_btn{
+    padding: .5rem 1rem;
+    border-radius: 5px;
+    color: #ffffff;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+.back_btn:hover{
+    background-color: #3123ff;   
+}
+.download_btn{
+    background-color: #757575;
+}
+.print_btn,
+.download_btn{
+    padding: .5rem 1rem;
+    margin-left: 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    color: #FFF;
+    border-radius: 5px;
+}
+.login_btn{
+    background-color: #3123ff;
+    border: none;
+    color: #ffffff;
+    text-decoration: none;
+    padding: .5rem;
+    border-radius: 5px;
+    font-size: .9rem;
+}
+.login_btn:hover{
+    background-color: #5549f8;
+}
+.print_btn{
+    background-color: #3123ff;
+    color: #ffffff;
+}
+.download_btn{
+    background-color: #3123ff;
+    font-size: .9rem;
+}
+.print_btn:hover,
+.download_btn:hover{
+    background-color: #FFF;
+    color: #1c0ed7;
+}
+.zoom_container{
+    display: flex;
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    z-index: 1;
+}
+.zoom_btn{
+    background-color: #1c0ed7;
+    border: 5px solid #5a4ff5;
+    color: #FFF;
+    outline: none;
+    padding: .5rem;
+    height: 3rem;
+    width: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-left: 1rem;
+    cursor: pointer;
+}
+.zoom_btn:hover{
+    background-color: #797878;
+    border: 5px solid #c1c1c2;
+    color: #FFF;
+}
+#zoom_out{
+    display: none;
+}
+
+.main_container {
+    height: 100vh;
+    width: 100%;
+    padding-top: 4rem;
+    color: #545454;
+    background-color: #FFF;
+    text-align: center;
+    overflow-x: auto;
+}
+
+#schedule_container{
+    width: 100%;
+    background-color: #FFF;
+    padding: 1.5rem 3rem;
+    cursor: zoom-in;
+}
+.schedule_header{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.nemsu_logo, .iso_logo{
+    height: 6rem;
+    width: 6rem;
+    margin: 0 1rem;
+}
+
+.nemsu_logo{
+    border-radius: 50%;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+th, tr:first-child{
+    white-space: nowrap;
+}
+td, th{
+    border: 1px solid #000;
+    text-align: center;
+    padding: 0 5px;
+}
+.unusable_room{
+    color: #FFF;
+    background-color: #b10303;
+}
+
+.left_text{
+    text-align: left;
+}
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem 0;
+}
+.undersign{
+    text-align: left;
+}
+.undersign section{
+    margin-top: 1.5rem;
+}
+
+@media print {
+    .header{
+        display: none;
+        padding-top: 0;
+    }
+    .main_container{
+        position: fixed;
+        top: 0;
+        left: 0;
+        margin: 0;
+        width: 100%;
+        height: 100vh;
+        padding: 0;
+    }
+    .zoom_container{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1090px) {
+    .header{
+        position: absolute;
+        top: -100%;
+        left: 0;
+        height: fit-content;
+        justify-content: center;
+        background: rgb(28,14,215);
+        background: linear-gradient(128deg, rgba(28,14,215,1) 0%, rgba(47,189,245,1) 81%);
+        border-bottom: 1px solid #adadad;
+        box-shadow: 1px 1px 20px 2px #494949;
+        padding: 2rem 0;
+        width: 100%;
+        transition: all 1s ease;
+        z-index: 5;
+    }
+    .header section{
+        width: 100%;
+        flex-direction: column;      
+    }
+    .header section select,
+    .download_btn,
+    .print_btn{
+        width: 50%;
+        margin: 0;
+        margin-top: 1rem;
+        background-color: #090081;
+    }
+    #schedule_container{
+        width: fit-content;
+    }
+    #show_header_btn{
+        display: flex;
+    }
+    
+    #hide_header_btn{
+        display: flex;
+    }
+    .login_btn{
+        display: none;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .print_btn{
+        display: none;
+    }
+}
+

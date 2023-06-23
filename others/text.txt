@@ -1,0 +1,56 @@
+
+TO ASK:
+-------
+1. Course code structuring - Sir Cocoy
+--------------------------------------------------------------------------------------------------------------------------
+
+TODO's:
+-------
+* Add a prospectus year button to view all course prospectus  
+* ERR_CACHE_MISS creating new prospectus
+* Add a status of the faculty ex. active or inactive
+
+
+000webhost
+---------------------------------------------------------
+Website Password: ZTdonb@USLCTmWlwF7vh
+Database username: Rich10261999 (id20537810_rich10261999)
+Database password: Rich1026199_000webhost
+
+Infinity Free
+---------------------------------------------------------
+richarddivino128@gmail.com
+Rich10261999_infinityfree
+username: epiz_33976568
+
+
+
+
+----------------------------------------------------------
+
+BSBA-FM
+Living in the IT Era            eGE1
+Management Information System   iIT1
+
+BSBA-BE
+Living in the IT Era            eGE1
+Management Information System   iIT1
+
+BSES
+Information Technology          GE IT
+
+BSHM
+Living in the IT Era            eGE1
+
+BSFI
+Living in the IT Era            GE-E2
+
+
+
+
+
+
+
+
+
+

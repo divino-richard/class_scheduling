@@ -1,0 +1,25 @@
+.admin_illustration{
+    display: flex;
+    justify-content: center;
+    height: 90vh;
+    width: 100%;
+}
+.illustration{
+    margin-top: 0;
+    width: 35rem;
+    animation: bounce 3s infinite ease;
+    object-fit: contain;
+}
+
+@keyframes bounce {
+    0% {
+        margin-top: 0;
+    }
+    50% {
+        margin-top: 1.5rem;
+    }
+    100% {
+        margin-top: 0;
+    }
+}
+  

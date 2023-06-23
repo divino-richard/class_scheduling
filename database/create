@@ -1,0 +1,304 @@
+# ---------------------------------------------------------------------- #
+# Script generated with: DeZign for Databases 13.0.1                     #
+# Target DBMS:           MySQL 5                                         #
+# Project file:          attendance_rtabada_pitos_original.dez           #
+# Project name:                                                          #
+# Author:                                                                #
+# Script type:           Database creation script                        #
+# Created on:            2022-11-17 22:11                                #
+# ---------------------------------------------------------------------- #
+
+
+# ---------------------------------------------------------------------- #
+# Add tables                                                             #
+# ---------------------------------------------------------------------- #
+
+# ---------------------------------------------------------------------- #
+# Add table "Students"                                                   #
+# ---------------------------------------------------------------------- #
+
+CREATE TABLE `Students` (
+    `Stud_id` VARCHAR(40) NOT NULL,
+    `fname` VARCHAR(60),
+    `mname` VARCHAR(60),
+    `lname` VARCHAR(60),
+    `ext_name` VARCHAR(40),
+    `Address` TEXT,
+    `Marital_stat` VARCHAR(100),
+    `cntact_no` VARCHAR(40),
+    `dbirth` VARCHAR(40),
+    `pbirth` VARCHAR(254),
+    `sex` VARCHAR(40),
+    `parents` VARCHAR(150),
+    `type_student` VARCHAR(100),
+    `status` VARCHAR(100),
+    `remarks` TEXT,
+    `vaccinated` VARCHAR(60),
+    CONSTRAINT `PK_Students` PRIMARY KEY (`Stud_id`)
+);
+
+# ---------------------------------------------------------------------- #
+# Add table "faculty"                                                    #
+# ---------------------------------------------------------------------- #
+
+CREATE TABLE `faculty` (
+    `fac_id` VARCHAR(40) NOT NULL,
+    `fname` VARCHAR(100),
+    `mname` VARCHAR(100),
+    `lname` VARCHAR(40),
+    `address` TEXT,
+    `sex` VARCHAR(40),
+    `marital_stat` VARCHAR(40),
+    `contact` VARCHAR(40),
+    `vaccinated` VARCHAR(40),
+    `position` VARCHAR(100),
+    `designation` VARCHAR(100),
+    CONSTRAINT `PK_faculty` PRIMARY KEY (`fac_id`)
+);
+
+# ---------------------------------------------------------------------- #
+# Add table "attendance"                                                 #
+# ---------------------------------------------------------------------- #
+
+CREATE TABLE `attendance` (
+    `Stud_id` VARCHAR(40) NOT NULL,
+    `date` VARCHAR(40) NOT NULL,
+    `time_in` VARCHAR(40),
+    `temp_in` VARCHAR(40),
+    `time_out` VARCHAR(40),
+    `temp_out` VARCHAR(40),
+    PRIMARY KEY (`Stud_id`, `date`)
+);
+
+# ---------------------------------------------------------------------- #
+# Add table "images"                                                     #
+# ---------------------------------------------------------------------- #
+
+CREATE TABLE `images` (
+    `Stud_id` VARCHAR(40) NOT NULL,
+    `filename` TEXT,
+    `type` VARCHAR(40),
+    `size` VARCHAR(40),
+    PRIMARY KEY (`Stud_id`)
+);
+
+# ---------------------------------------------------------------------- #
+# Add table "college"                                                    #
+# ---------------------------------------------------------------------- #
+
+
+
+CREATE TABLE `college` (
+    `coll_id` VARCHAR(60) NOT NULL,
+    `coll_code` VARCHAR(40),
+    `coll_desc` TEXT,
+    CONSTRAINT `PK_college` PRIMARY KEY (`coll_id`)
+);
+
+
+
+# ---------------------------------------------------------------------- #
+# Add table "appointment"                                                #
+# ---------------------------------------------------------------------- #
+
+CREATE TABLE `appointment` (
+    `Stud_id` VARCHAR(40) NOT NULL,
+    `date` VARCHAR(40) NOT NULL,
+    `time` VARCHAR(40) NOT NULL,
+    `transaction` TEXT NOT NULL,
+    `tansact_with` VARCHAR(40),
+    `contact` VARCHAR(40),
+    CONSTRAINT `PK_appointment` PRIMARY KEY (`Stud_id`, `date`, `time`)
+);
+
+# ---------------------------------------------------------------------- #
+# Add table "course"                                                     #
+# ---------------------------------------------------------------------- #
+
+
+
+CREATE TABLE `course` (
+    `course_id` VARCHAR(40) NOT NULL,
+    `coll_id` VARCHAR(60) NOT NULL,
+    `crs_code` VARCHAR(40),
+    `crs_desc` TEXT,
+    `coordinator` VARCHAR(150),
+    `major` VARCHAR(150),
+    CONSTRAINT `PK_course` PRIMARY KEY (`course_id`)
+);
+
+
+
+# ---------------------------------------------------------------------- #
+# Add table "Rooms"                                                      #
+# ---------------------------------------------------------------------- #
+
+
+
+CREATE TABLE `Rooms` (
+    `rm_id` VARCHAR(40) NOT NULL,
+    `building` VARCHAR(40),
+    `type` VARCHAR(40),
+    `status` VARCHAR(40),
+    CONSTRAINT `PK_Rooms` PRIMARY KEY (`rm_id`)
+);
+
+
+
+# ---------------------------------------------------------------------- #
+# Add table "subject"                                                    #
+# ---------------------------------------------------------------------- #
+
+CREATE TABLE `subject` (
+    `subject_code` VARCHAR(60) NOT NULL,
+    `course_id` VARCHAR(40) NOT NULL,
+    `title` TEXT,
+    `lec_hr` VARCHAR(40),
+    `lab_hr` VARCHAR(40),
+    `units` VARCHAR(40),
+    `pre_requisites` VARCHAR(150),
+    CONSTRAINT `PK_subject` PRIMARY KEY (`subject_code`)
+);
+
+# ---------------------------------------------------------------------- #
+# Add table "course_faculty"                                             #
+# ---------------------------------------------------------------------- #
+
+CREATE TABLE `course_faculty` (
+    `course_id` VARCHAR(40) NOT NULL,
+    `fac_id` VARCHAR(40) NOT NULL,
+    CONSTRAINT `PK_course_faculty` PRIMARY KEY (`course_id`, `fac_id`)
+);
+
+# ---------------------------------------------------------------------- #
+# Add table "Students_enrolled_course"                                   #
+# ---------------------------------------------------------------------- #
+
+CREATE TABLE `Students_enrolled_course` (
+    `Stud_id` VARCHAR(40) NOT NULL,
+    `s_year` VARCHAR(40) NOT NULL,
+    `sem` VARCHAR(40) NOT NULL,
+    `course_id` VARCHAR(40) NOT NULL,
+    `year` VARCHAR(40),
+    CONSTRAINT `PK_Students_enrolled_course` PRIMARY KEY (`Stud_id`, `s_year`, `sem`)
+);
+
+# ---------------------------------------------------------------------- #
+# Add table "offering_sem"                                               #
+# ---------------------------------------------------------------------- #
+
+
+
+CREATE TABLE `offering_sem` (
+    `subject_code` VARCHAR(60) NOT NULL,
+    `section` VARCHAR(40) NOT NULL,
+    `s_year` VARCHAR(40) NOT NULL,
+    `sem` VARCHAR(40) NOT NULL,
+    `fac_id` VARCHAR(40),
+    `rm_id` VARCHAR(40),
+    `sched_time` VARCHAR(40),
+    `sched_day` VARCHAR(40),
+    CONSTRAINT `PK_offering_sem` PRIMARY KEY (`subject_code`, `section`, `s_year`, `sem`)
+);
+
+
+
+# ---------------------------------------------------------------------- #
+# Add table "Stud_enrolled_subject"                                      #
+# ---------------------------------------------------------------------- #
+
+CREATE TABLE `Stud_enrolled_subject` (
+    `Stud_id` VARCHAR(40) NOT NULL,
+    `subject_code` VARCHAR(60) NOT NULL,
+    `s_year` VARCHAR(40) NOT NULL,
+    `sem` VARCHAR(40) NOT NULL,
+    `section` VARCHAR(40) NOT NULL,
+    `grade` VARCHAR(40),
+    PRIMARY KEY (`Stud_id`)
+);
+
+# ---------------------------------------------------------------------- #
+# Add table "Prospectus"                                                 #
+# ---------------------------------------------------------------------- #
+
+
+
+CREATE TABLE `Prospectus` (
+    `revision_year` VARCHAR(40) NOT NULL,
+    `course_id` VARCHAR(40) NOT NULL,
+    CONSTRAINT `PK_Prospectus` PRIMARY KEY (`revision_year`, `course_id`)
+);
+
+
+
+# ---------------------------------------------------------------------- #
+# Add table "prospectus_detail"                                          #
+# ---------------------------------------------------------------------- #
+
+
+
+CREATE TABLE `prospectus_detail` (
+    `course_id` VARCHAR(40) NOT NULL,
+    `revision_year` VARCHAR(40) NOT NULL,
+    `subject_code` VARCHAR(60) NOT NULL,
+    `year` VARCHAR(40) NOT NULL,
+    `sem` VARCHAR(40) NOT NULL,
+    CONSTRAINT `PK_prospectus_detail` PRIMARY KEY (`course_id`, `revision_year`, `subject_code`, `year`, `sem`)
+);
+
+
+
+# ---------------------------------------------------------------------- #
+# Add foreign key constraints                                            #
+# ---------------------------------------------------------------------- #
+
+ALTER TABLE `subject` ADD CONSTRAINT `course_subject` 
+    FOREIGN KEY (`course_id`) REFERENCES `course` (`course_id`);
+
+ALTER TABLE `course_faculty` ADD CONSTRAINT `course_course_faculty` 
+    FOREIGN KEY (`course_id`) REFERENCES `course` (`course_id`);
+
+ALTER TABLE `course_faculty` ADD CONSTRAINT `faculty_course_faculty` 
+    FOREIGN KEY (`fac_id`) REFERENCES `faculty` (`fac_id`);
+
+ALTER TABLE `attendance` ADD CONSTRAINT `Students_attendance` 
+    FOREIGN KEY (`Stud_id`) REFERENCES `Students` (`Stud_id`);
+
+ALTER TABLE `images` ADD CONSTRAINT `Students_images` 
+    FOREIGN KEY (`Stud_id`) REFERENCES `Students` (`Stud_id`);
+
+ALTER TABLE `Students_enrolled_course` ADD CONSTRAINT `Students_Students_enrolled_course` 
+    FOREIGN KEY (`Stud_id`) REFERENCES `Students` (`Stud_id`);
+
+ALTER TABLE `Students_enrolled_course` ADD CONSTRAINT `course_Students_enrolled_course` 
+    FOREIGN KEY (`course_id`) REFERENCES `course` (`course_id`);
+
+ALTER TABLE `offering_sem` ADD CONSTRAINT `faculty_offering_sem` 
+    FOREIGN KEY (`fac_id`) REFERENCES `faculty` (`fac_id`);
+
+ALTER TABLE `offering_sem` ADD CONSTRAINT `subject_offering_sem` 
+    FOREIGN KEY (`subject_code`) REFERENCES `subject` (`subject_code`);
+
+ALTER TABLE `offering_sem` ADD CONSTRAINT `Rooms_offering_sem` 
+    FOREIGN KEY (`rm_id`) REFERENCES `Rooms` (`rm_id`);
+
+ALTER TABLE `Stud_enrolled_subject` ADD CONSTRAINT `Students_enrolled_course_Stud_enrolled_subject` 
+    FOREIGN KEY (`Stud_id`, `s_year`, `sem`) REFERENCES `Students_enrolled_course` (`Stud_id`,`s_year`,`sem`);
+
+ALTER TABLE `Stud_enrolled_subject` ADD CONSTRAINT `offering_sem_Stud_enrolled_subject` 
+    FOREIGN KEY (`subject_code`, `section`, `s_year`, `sem`) REFERENCES `offering_sem` (`subject_code`,`section`,`s_year`,`sem`);
+
+ALTER TABLE `Prospectus` ADD CONSTRAINT `course_Prospectus` 
+    FOREIGN KEY (`course_id`) REFERENCES `course` (`course_id`);
+
+ALTER TABLE `prospectus_detail` ADD CONSTRAINT `subject_prospectus_detail` 
+    FOREIGN KEY (`subject_code`) REFERENCES `subject` (`subject_code`);
+
+ALTER TABLE `prospectus_detail` ADD CONSTRAINT `Prospectus_prospectus_detail` 
+    FOREIGN KEY (`revision_year`, `course_id`) REFERENCES `Prospectus` (`revision_year`,`course_id`);
+
+ALTER TABLE `appointment` ADD CONSTRAINT `Students_appointment` 
+    FOREIGN KEY (`Stud_id`) REFERENCES `Students` (`Stud_id`);
+
+ALTER TABLE `course` ADD CONSTRAINT `college_course` 
+    FOREIGN KEY (`coll_id`) REFERENCES `college` (`coll_id`);

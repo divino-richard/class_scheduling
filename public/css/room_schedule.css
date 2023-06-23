@@ -1,0 +1,93 @@
+
+.room_report{
+    background-color: #FFF;
+}
+.room_report header{
+    padding: .5rem;
+    text-align: center;
+    color: #ffffff;
+    background-color: #2d8fdf;
+    border: 1px solid #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: .9rem;
+}
+.actions select{
+    border: none;
+    outline: none;
+    background-color: #185f99;
+    color: #FFF;
+    padding: .5rem;
+    cursor: pointer;
+}
+.actions select option{
+    background-color: #FFF;
+    color: #000;
+}
+#print_btn,
+#download_btn{
+    border: none;
+    outline: none;
+    padding: .5rem;
+    border-radius: 5px;
+    background-color: #185f99;
+    color: #FFF;
+    cursor: pointer;
+}
+.report_content{
+    display: flex;
+}
+.report_content section{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.report_content section span{
+    width: 100%;
+    padding: .5rem;
+    background-color: #9bcffa;
+    border: 1px solid #ffffff;
+    text-align: center;
+}
+
+.occupied,
+.vacant {
+    height: 7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ffffff;
+}
+.occupied p,
+.vacant p{
+    padding: 2px 0;
+    font-size: .7rem;
+}
+.occupied{
+    background-color: #ff9898;
+}
+
+.vacant{
+    background-color: #95f8b4;
+} 
+
+@media print {
+    .header,
+    .actions{
+        display: none !important;
+    }
+    .room_report{
+        position: fixed;
+        top: 0;
+        left: 0;
+        margin: 0;
+        width: 100%;
+        height: 100vh;
+    }
+    .room_report header{
+        justify-content: space-between;
+    }
+}

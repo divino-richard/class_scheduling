@@ -1,0 +1,53 @@
+.drop_down{
+    position: relative;
+    margin: 5px 0;
+    width: fit-content;
+    cursor: pointer;
+    border-radius: 1rem;
+}
+.drop_down:hover{
+    background-color: var(--blue-accent);
+    color: var(--primary);
+}
+.drop_down:hover > .college_courses{
+    display: flex;
+    flex-direction: column;
+}
+
+.drop_down_btn{
+    padding: .3rem .5rem;
+    background-color: transparent;
+    border: 1px solid #e0e0e0;
+    border-radius: 1rem;
+}
+
+.college_courses{
+    position: absolute;
+    left: 0;
+    display: none;
+    color: var(--primary);
+    border-top: 1px solid #FFF;
+    background-color: var(--blue-accent);
+    border-radius: .3rem;
+    width: 100%;
+    z-index: 1;
+}
+.college_courses a{
+    color: #FFF;
+    padding: 7px;
+    width: 100%;
+    border-radius: .3rem;
+}
+.college_courses a:hover{
+    background-color: #33a8e2;
+}
+
+.dean_info{
+    background-color: #FFF;
+    margin: 0 2rem;
+    padding: 1rem 0;
+    border-radius: 5px;
+}
+.dean_info span{
+    padding: 0 1rem;
+}

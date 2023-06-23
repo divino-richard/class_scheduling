@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+body{
+    background-color: #FFF;;
+}
+@media print {
+    button, form{
+        display: none;
+    }
+    body{
+        orientation: landscape;
+        size: A4;
+    }
+}
+.sched_content{
+    margin: 0;
+    padding: 10px 25px;
+}
+.sched_header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+}
+.sched_header img{
+    width: 100px;
+}
+.header_info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+table{
+    margin-top: 5px;
+    border-collapse: collapse;
+    width: 100%;
+}
+td, th{
+    border: 1px solid #000;
+    padding: 2px;
+    font-size: 15px;
+}
+.action{
+    margin: 10px 0;
+}
+.btn{
+    background-color: #056dce;
+    color: #FFF;
+    border: none;
+    outline: none;
+    padding: 7px 25px;
+    border-radius: 5px;
+    margin: 15px 0; 
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: #035099;
+}
+form{
+    border: 1px solid #747474;
+    border-radius: 5px;
+}
+form h4{
+    background-color: #dbdbdb;
+    color: #747474;
+    text-align: center;
+    padding: 10px;
+}
+form select, form span{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+form input[type="submit"]{
+    margin-left: 10px;
+}
+form input[type="number"]{
+    width: 75px;
+}
+.sched_for, .time_duration{
+    margin-left: 10px;
+    margin-top: 10px;
+
+}

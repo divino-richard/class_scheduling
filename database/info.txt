@@ -1,0 +1,15 @@
+
+THIS SYSTEM ONLY INCLUDES THE FOLLOWING TABLES
+
+- course
+- faculty
+- course_faculty
+- subject
+- rooms
+- schedules
+- offering_sem
+
+TO BE ADDED TABLES
+- settings
+
+

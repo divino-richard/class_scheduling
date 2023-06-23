@@ -1,0 +1,192 @@
+# ---------------------------------------------------------------------- #
+# Script generated with: DeZign for Databases 13.0.1                     #
+# Target DBMS:           MySQL 5                                         #
+# Project file:          attendance_rtabada_pitos_original.dez           #
+# Project name:                                                          #
+# Author:                                                                #
+# Script type:           Database drop script                            #
+# Created on:            2022-11-17 22:11                                #
+# ---------------------------------------------------------------------- #
+
+
+# ---------------------------------------------------------------------- #
+# Drop foreign key constraints                                           #
+# ---------------------------------------------------------------------- #
+
+ALTER TABLE `subject` DROP FOREIGN KEY `course_subject`;
+
+ALTER TABLE `course_faculty` DROP FOREIGN KEY `course_course_faculty`;
+
+ALTER TABLE `course_faculty` DROP FOREIGN KEY `faculty_course_faculty`;
+
+ALTER TABLE `attendance` DROP FOREIGN KEY `Students_attendance`;
+
+ALTER TABLE `images` DROP FOREIGN KEY `Students_images`;
+
+ALTER TABLE `Students_enrolled_course` DROP FOREIGN KEY `Students_Students_enrolled_course`;
+
+ALTER TABLE `Students_enrolled_course` DROP FOREIGN KEY `course_Students_enrolled_course`;
+
+ALTER TABLE `offering_sem` DROP FOREIGN KEY `faculty_offering_sem`;
+
+ALTER TABLE `offering_sem` DROP FOREIGN KEY `subject_offering_sem`;
+
+ALTER TABLE `offering_sem` DROP FOREIGN KEY `Rooms_offering_sem`;
+
+ALTER TABLE `Stud_enrolled_subject` DROP FOREIGN KEY `Students_enrolled_course_Stud_enrolled_subject`;
+
+ALTER TABLE `Stud_enrolled_subject` DROP FOREIGN KEY `offering_sem_Stud_enrolled_subject`;
+
+ALTER TABLE `Prospectus` DROP FOREIGN KEY `course_Prospectus`;
+
+ALTER TABLE `prospectus_detail` DROP FOREIGN KEY `subject_prospectus_detail`;
+
+ALTER TABLE `prospectus_detail` DROP FOREIGN KEY `Prospectus_prospectus_detail`;
+
+ALTER TABLE `appointment` DROP FOREIGN KEY `Students_appointment`;
+
+ALTER TABLE `course` DROP FOREIGN KEY `college_course`;
+
+# ---------------------------------------------------------------------- #
+# Drop table "prospectus_detail"                                         #
+# ---------------------------------------------------------------------- #
+
+# Drop constraints #
+
+ALTER TABLE `prospectus_detail` DROP PRIMARY KEY;
+
+DROP TABLE `prospectus_detail`;
+
+# ---------------------------------------------------------------------- #
+# Drop table "Prospectus"                                                #
+# ---------------------------------------------------------------------- #
+
+# Drop constraints #
+
+ALTER TABLE `Prospectus` DROP PRIMARY KEY;
+
+DROP TABLE `Prospectus`;
+
+# ---------------------------------------------------------------------- #
+# Drop table "Stud_enrolled_subject"                                     #
+# ---------------------------------------------------------------------- #
+
+# Drop constraints #
+
+DROP TABLE `Stud_enrolled_subject`;
+
+# ---------------------------------------------------------------------- #
+# Drop table "offering_sem"                                              #
+# ---------------------------------------------------------------------- #
+
+# Drop constraints #
+
+ALTER TABLE `offering_sem` DROP PRIMARY KEY;
+
+DROP TABLE `offering_sem`;
+
+# ---------------------------------------------------------------------- #
+# Drop table "Students_enrolled_course"                                  #
+# ---------------------------------------------------------------------- #
+
+# Drop constraints #
+
+ALTER TABLE `Students_enrolled_course` DROP PRIMARY KEY;
+
+DROP TABLE `Students_enrolled_course`;
+
+# ---------------------------------------------------------------------- #
+# Drop table "course_faculty"                                            #
+# ---------------------------------------------------------------------- #
+
+# Drop constraints #
+
+ALTER TABLE `course_faculty` DROP PRIMARY KEY;
+
+DROP TABLE `course_faculty`;
+
+# ---------------------------------------------------------------------- #
+# Drop table "subject"                                                   #
+# ---------------------------------------------------------------------- #
+
+# Drop constraints #
+
+ALTER TABLE `subject` DROP PRIMARY KEY;
+
+DROP TABLE `subject`;
+
+# ---------------------------------------------------------------------- #
+# Drop table "Rooms"                                                     #
+# ---------------------------------------------------------------------- #
+
+# Drop constraints #
+
+ALTER TABLE `Rooms` DROP PRIMARY KEY;
+
+DROP TABLE `Rooms`;
+
+# ---------------------------------------------------------------------- #
+# Drop table "course"                                                    #
+# ---------------------------------------------------------------------- #
+
+# Drop constraints #
+
+ALTER TABLE `course` DROP PRIMARY KEY;
+
+DROP TABLE `course`;
+
+# ---------------------------------------------------------------------- #
+# Drop table "appointment"                                               #
+# ---------------------------------------------------------------------- #
+
+# Drop constraints #
+
+ALTER TABLE `appointment` DROP PRIMARY KEY;
+
+DROP TABLE `appointment`;
+
+# ---------------------------------------------------------------------- #
+# Drop table "college"                                                   #
+# ---------------------------------------------------------------------- #
+
+# Drop constraints #
+
+ALTER TABLE `college` DROP PRIMARY KEY;
+
+DROP TABLE `college`;
+
+# ---------------------------------------------------------------------- #
+# Drop table "images"                                                    #
+# ---------------------------------------------------------------------- #
+
+# Drop constraints #
+
+DROP TABLE `images`;
+
+# ---------------------------------------------------------------------- #
+# Drop table "attendance"                                                #
+# ---------------------------------------------------------------------- #
+
+# Drop constraints #
+
+DROP TABLE `attendance`;
+
+# ---------------------------------------------------------------------- #
+# Drop table "faculty"                                                   #
+# ---------------------------------------------------------------------- #
+
+# Drop constraints #
+
+ALTER TABLE `faculty` DROP PRIMARY KEY;
+
+DROP TABLE `faculty`;
+
+# ---------------------------------------------------------------------- #
+# Drop table "Students"                                                  #
+# ---------------------------------------------------------------------- #
+
+# Drop constraints #
+
+ALTER TABLE `Students` DROP PRIMARY KEY;
+
+DROP TABLE `Students`;

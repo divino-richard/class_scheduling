@@ -1,0 +1,151 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.course_schedules{
+    margin: .5rem;
+    border-radius: 0 0 5px 5px;
+    background-color: #FFF;
+    padding: 2rem;
+}
+.course_schedules span{
+    margin-left: 1rem;
+}
+.course_schedules select{
+    padding: .5rem;
+    background-color: #1c0ed7;
+    color: #FFF;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+.course_schedules select option{
+    background-color: #FFF;
+    color: #4d4d4d;
+}
+.course_schedules button{
+    padding: .5rem;
+    border: none;
+    outline: none;
+    background-color: #1c0ed7;
+    color: #FFF;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.course_schedules button:hover{
+    background-color: #dedddd;
+    color: #4d4d4d;
+}
+.schedule_header{
+    color: #686868;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+.schedule_header a{
+    padding: .5rem;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    background-color: #1c0ed7;
+    color: #FFF; 
+    text-decoration: none;
+    cursor: pointer;
+}
+.schedule_header a:hover{
+    background-color: #dedddd;
+    color: #686868;
+}
+.schedules{
+    display: flex;
+    align-items: flex-start;
+    justify-content: start;
+    flex-wrap: wrap;
+    padding: .5rem;
+    border: 1px solid #e3e3e3;
+    border-radius: 5px;
+    margin-top: .5rem;
+    padding: 1rem .5rem;
+}
+.schedules a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e3e3e3;
+    text-decoration: none;
+    border-radius: 5px;
+    color: #4d4d4d;
+    padding: 1rem;
+    margin: .5rem;
+}
+.schedules a:hover{
+    background-color: #7c7c7c;
+    color: #FFF;
+}
+.schedules i{
+    font-size: 4rem;
+    margin-right: 1rem;
+}
+.schedules section{
+    display: flex;
+    flex-direction: column;
+}
+.schedules span{
+    margin: 0;
+    white-space: nowrap;
+    font-size: .8rem;
+}
+
+.schedule_placeholder{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 10rem;
+    width: 15rem;
+    background-color: #eeeeee;
+    color: #8f8e8e;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+.schedule_placeholder span{
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+.modal_container{
+    display: none;
+    cursor: default;
+}
+.modal_content{
+    height: fit-content;
+    width: fit-content;
+    padding: 1rem;
+}
+.modal_content h2{
+    color: #3f3f3f;
+    margin-bottom: 1rem;
+}
+.modal_content section{
+    margin-bottom: 1rem;
+}
+.modal_content button{
+    color: #FFF;
+    padding: .5rem;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.modal_content button:hover{
+    opacity: .7;
+}
+#reuse_now{
+    background-color: #1c0ed7;
+}
+#cancel{
+    background-color: #af3333;
+}
